@@ -1,0 +1,69 @@
+
+# codemagic.yaml
+
+# Set the Flutter version you want to use
+flutter:
+  version: "stable"
+
+# Define the workflows for different branches
+workflows:
+  # Workflow for the main branch (or any branch you want to use for production builds)
+  main:
+    name: Production Build and Email
+    environment:
+      flutter: stable
+      # Add any environment variables you need for your build
+      # For example:
+      # - VARIABLE_NAME: "variable_value"
+    scripts:
+      # Add any pre-build scripts you need to run before starting the build
+      # For example:
+      # - name: "Pre-build script"
+      #   script: |
+      #     echo "Running pre-build script"
+
+      # Build the Flutter app for iOS
+      - name: "Flutter Build iOS"
+        script: flutter build ios --release --no-codesign
+
+      # Archive the built app
+      - name: "Archive iOS App"
+        script: flutter build ios --release --no-codesign --build-name=1.0.0 --build-number=$BUILD_NUMBER
+
+      # Send the iOS app as an email attachment
+      - name: "Send Email"
+        script: |
+          mail -s "iOS App Build - $BUILD_NUMBER" -A build/ios/iphoneos/Runner.app charbel_chedid06@outlook.com
+
+    artifacts:
+      # Define the artifacts you want to keep after the build
+      # In this case, we'll keep the generated .app directory
+      - build/ios/iphoneos/Runner.app
+
+  # You can add more workflows for other branches (e.g., feature branches, development)
+  # Uncomment and modify as needed:
+  # feature:
+  #   name: Feature Branch Build and Email
+  #   environment:
+  #     - VARIABLE_NAME: "variable_value"
+  #   scripts:
+  #     - name: "Flutter Build iOS"
+  #       script: flutter build ios --release --no-codesign
+  #     - name: "Archive iOS App"
+  #       script: flutter build ios --release --no-codesign --build-name=1.0.0 --build-number=$BUILD_NUMBER
+  #     - name: "Send Email"
+  #       script: |
+  #         mail -s "iOS App Build - $BUILD_NUMBER" -A build/ios/iphoneos/Runner.app your-email@example.com
+  #   artifacts:
+  #     - build/ios/iphoneos/Runner.app
+
+# Define the workflows that should be executed on push and pull request events
+# You can modify this section as per your requirements
+trigger:
+  # Execute the "main" workflow on push to the main branch
+  - main
+
+  # You can add more trigger events here
+  # Uncomment and modify as needed:
+  # - feature
+

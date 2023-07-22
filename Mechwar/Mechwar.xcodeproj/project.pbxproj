@@ -1,0 +1,754 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 53;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C60D2CA52A6AD0570070F1A2 /* Tests_iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = C60D2CA42A6AD0570070F1A2 /* Tests_iOS.swift */; };
+		C60D2CA72A6AD0570070F1A2 /* Tests_iOSLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C60D2CA62A6AD0570070F1A2 /* Tests_iOSLaunchTests.swift */; };
+		C60D2CB12A6AD0580070F1A2 /* Tests_macOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = C60D2CB02A6AD0580070F1A2 /* Tests_macOS.swift */; };
+		C60D2CB32A6AD0580070F1A2 /* Tests_macOSLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C60D2CB22A6AD0580070F1A2 /* Tests_macOSLaunchTests.swift */; };
+		C60D2CB42A6AD0580070F1A2 /* MechwarApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C60D2C8C2A6AD0560070F1A2 /* MechwarApp.swift */; };
+		C60D2CB52A6AD0580070F1A2 /* MechwarApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C60D2C8C2A6AD0560070F1A2 /* MechwarApp.swift */; };
+		C60D2CB62A6AD0580070F1A2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C60D2C8D2A6AD0560070F1A2 /* ContentView.swift */; };
+		C60D2CB72A6AD0580070F1A2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C60D2C8D2A6AD0560070F1A2 /* ContentView.swift */; };
+		C60D2CB82A6AD0580070F1A2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C60D2C8E2A6AD0570070F1A2 /* Assets.xcassets */; };
+		C60D2CB92A6AD0580070F1A2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C60D2C8E2A6AD0570070F1A2 /* Assets.xcassets */; };
+		C668B5A72A6B3F5A00AC84F5 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C668B5A62A6B3F5A00AC84F5 /* MapKit.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C60D2CA12A6AD0570070F1A2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C60D2C872A6AD0560070F1A2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C60D2C922A6AD0570070F1A2;
+			remoteInfo = "Mechwar (iOS)";
+		};
+		C60D2CAD2A6AD0580070F1A2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C60D2C872A6AD0560070F1A2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C60D2C982A6AD0570070F1A2;
+			remoteInfo = "Mechwar (macOS)";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		C60D2C8C2A6AD0560070F1A2 /* MechwarApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MechwarApp.swift; sourceTree = "<group>"; };
+		C60D2C8D2A6AD0560070F1A2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		C60D2C8E2A6AD0570070F1A2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C60D2C932A6AD0570070F1A2 /* Mechwar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mechwar.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C60D2C992A6AD0570070F1A2 /* Mechwar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Mechwar.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C60D2C9B2A6AD0570070F1A2 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
+		C60D2CA02A6AD0570070F1A2 /* Tests iOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests iOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C60D2CA42A6AD0570070F1A2 /* Tests_iOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_iOS.swift; sourceTree = "<group>"; };
+		C60D2CA62A6AD0570070F1A2 /* Tests_iOSLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_iOSLaunchTests.swift; sourceTree = "<group>"; };
+		C60D2CAC2A6AD0570070F1A2 /* Tests macOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Tests macOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C60D2CB02A6AD0580070F1A2 /* Tests_macOS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOS.swift; sourceTree = "<group>"; };
+		C60D2CB22A6AD0580070F1A2 /* Tests_macOSLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests_macOSLaunchTests.swift; sourceTree = "<group>"; };
+		C60D2CC92A6B2BC80070F1A2 /* Mechwar (iOS).entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Mechwar (iOS).entitlements"; sourceTree = "<group>"; };
+		C668B5A42A6B3F5A00AC84F5 /* Mechwar--iOS--Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Mechwar--iOS--Info.plist"; sourceTree = "<group>"; };
+		C668B5A62A6B3F5A00AC84F5 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS15.0.sdk/System/Library/Frameworks/MapKit.framework; sourceTree = DEVELOPER_DIR; };
+		C668B5A82A6B3F9E00AC84F5 /* Mechwar (iOS)Release.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Mechwar (iOS)Release.entitlements"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C60D2C902A6AD0570070F1A2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C668B5A72A6B3F5A00AC84F5 /* MapKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C60D2C962A6AD0570070F1A2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C60D2C9D2A6AD0570070F1A2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C60D2CA92A6AD0570070F1A2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C60D2C862A6AD0560070F1A2 = {
+			isa = PBXGroup;
+			children = (
+				C668B5A82A6B3F9E00AC84F5 /* Mechwar (iOS)Release.entitlements */,
+				C668B5A42A6B3F5A00AC84F5 /* Mechwar--iOS--Info.plist */,
+				C60D2CC92A6B2BC80070F1A2 /* Mechwar (iOS).entitlements */,
+				C60D2C8B2A6AD0560070F1A2 /* Shared */,
+				C60D2C9A2A6AD0570070F1A2 /* macOS */,
+				C60D2CA32A6AD0570070F1A2 /* Tests iOS */,
+				C60D2CAF2A6AD0580070F1A2 /* Tests macOS */,
+				C60D2C942A6AD0570070F1A2 /* Products */,
+				C668B5A52A6B3F5A00AC84F5 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		C60D2C8B2A6AD0560070F1A2 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				C60D2C8C2A6AD0560070F1A2 /* MechwarApp.swift */,
+				C60D2C8D2A6AD0560070F1A2 /* ContentView.swift */,
+				C60D2C8E2A6AD0570070F1A2 /* Assets.xcassets */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		C60D2C942A6AD0570070F1A2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C60D2C932A6AD0570070F1A2 /* Mechwar.app */,
+				C60D2C992A6AD0570070F1A2 /* Mechwar.app */,
+				C60D2CA02A6AD0570070F1A2 /* Tests iOS.xctest */,
+				C60D2CAC2A6AD0570070F1A2 /* Tests macOS.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C60D2C9A2A6AD0570070F1A2 /* macOS */ = {
+			isa = PBXGroup;
+			children = (
+				C60D2C9B2A6AD0570070F1A2 /* macOS.entitlements */,
+			);
+			path = macOS;
+			sourceTree = "<group>";
+		};
+		C60D2CA32A6AD0570070F1A2 /* Tests iOS */ = {
+			isa = PBXGroup;
+			children = (
+				C60D2CA42A6AD0570070F1A2 /* Tests_iOS.swift */,
+				C60D2CA62A6AD0570070F1A2 /* Tests_iOSLaunchTests.swift */,
+			);
+			path = "Tests iOS";
+			sourceTree = "<group>";
+		};
+		C60D2CAF2A6AD0580070F1A2 /* Tests macOS */ = {
+			isa = PBXGroup;
+			children = (
+				C60D2CB02A6AD0580070F1A2 /* Tests_macOS.swift */,
+				C60D2CB22A6AD0580070F1A2 /* Tests_macOSLaunchTests.swift */,
+			);
+			path = "Tests macOS";
+			sourceTree = "<group>";
+		};
+		C668B5A52A6B3F5A00AC84F5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C668B5A62A6B3F5A00AC84F5 /* MapKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C60D2C922A6AD0570070F1A2 /* Mechwar (iOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C60D2CBC2A6AD0580070F1A2 /* Build configuration list for PBXNativeTarget "Mechwar (iOS)" */;
+			buildPhases = (
+				C60D2C8F2A6AD0570070F1A2 /* Sources */,
+				C60D2C902A6AD0570070F1A2 /* Frameworks */,
+				C60D2C912A6AD0570070F1A2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Mechwar (iOS)";
+			productName = "Mechwar (iOS)";
+			productReference = C60D2C932A6AD0570070F1A2 /* Mechwar.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C60D2C982A6AD0570070F1A2 /* Mechwar (macOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C60D2CBF2A6AD0580070F1A2 /* Build configuration list for PBXNativeTarget "Mechwar (macOS)" */;
+			buildPhases = (
+				C60D2C952A6AD0570070F1A2 /* Sources */,
+				C60D2C962A6AD0570070F1A2 /* Frameworks */,
+				C60D2C972A6AD0570070F1A2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Mechwar (macOS)";
+			productName = "Mechwar (macOS)";
+			productReference = C60D2C992A6AD0570070F1A2 /* Mechwar.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C60D2C9F2A6AD0570070F1A2 /* Tests iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C60D2CC22A6AD0580070F1A2 /* Build configuration list for PBXNativeTarget "Tests iOS" */;
+			buildPhases = (
+				C60D2C9C2A6AD0570070F1A2 /* Sources */,
+				C60D2C9D2A6AD0570070F1A2 /* Frameworks */,
+				C60D2C9E2A6AD0570070F1A2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C60D2CA22A6AD0570070F1A2 /* PBXTargetDependency */,
+			);
+			name = "Tests iOS";
+			productName = "Tests iOS";
+			productReference = C60D2CA02A6AD0570070F1A2 /* Tests iOS.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		C60D2CAB2A6AD0570070F1A2 /* Tests macOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C60D2CC52A6AD0580070F1A2 /* Build configuration list for PBXNativeTarget "Tests macOS" */;
+			buildPhases = (
+				C60D2CA82A6AD0570070F1A2 /* Sources */,
+				C60D2CA92A6AD0570070F1A2 /* Frameworks */,
+				C60D2CAA2A6AD0570070F1A2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C60D2CAE2A6AD0580070F1A2 /* PBXTargetDependency */,
+			);
+			name = "Tests macOS";
+			productName = "Tests macOS";
+			productReference = C60D2CAC2A6AD0570070F1A2 /* Tests macOS.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C60D2C872A6AD0560070F1A2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1310;
+				LastUpgradeCheck = 1310;
+				TargetAttributes = {
+					C60D2C922A6AD0570070F1A2 = {
+						CreatedOnToolsVersion = 13.1;
+					};
+					C60D2C982A6AD0570070F1A2 = {
+						CreatedOnToolsVersion = 13.1;
+					};
+					C60D2C9F2A6AD0570070F1A2 = {
+						CreatedOnToolsVersion = 13.1;
+						TestTargetID = C60D2C922A6AD0570070F1A2;
+					};
+					C60D2CAB2A6AD0570070F1A2 = {
+						CreatedOnToolsVersion = 13.1;
+						TestTargetID = C60D2C982A6AD0570070F1A2;
+					};
+				};
+			};
+			buildConfigurationList = C60D2C8A2A6AD0560070F1A2 /* Build configuration list for PBXProject "Mechwar" */;
+			compatibilityVersion = "Xcode 3.1";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C60D2C862A6AD0560070F1A2;
+			productRefGroup = C60D2C942A6AD0570070F1A2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C60D2C922A6AD0570070F1A2 /* Mechwar (iOS) */,
+				C60D2C982A6AD0570070F1A2 /* Mechwar (macOS) */,
+				C60D2C9F2A6AD0570070F1A2 /* Tests iOS */,
+				C60D2CAB2A6AD0570070F1A2 /* Tests macOS */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C60D2C912A6AD0570070F1A2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C60D2CB82A6AD0580070F1A2 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C60D2C972A6AD0570070F1A2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C60D2CB92A6AD0580070F1A2 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C60D2C9E2A6AD0570070F1A2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C60D2CAA2A6AD0570070F1A2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C60D2C8F2A6AD0570070F1A2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C60D2CB62A6AD0580070F1A2 /* ContentView.swift in Sources */,
+				C60D2CB42A6AD0580070F1A2 /* MechwarApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C60D2C952A6AD0570070F1A2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C60D2CB72A6AD0580070F1A2 /* ContentView.swift in Sources */,
+				C60D2CB52A6AD0580070F1A2 /* MechwarApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C60D2C9C2A6AD0570070F1A2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C60D2CA72A6AD0570070F1A2 /* Tests_iOSLaunchTests.swift in Sources */,
+				C60D2CA52A6AD0570070F1A2 /* Tests_iOS.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C60D2CA82A6AD0570070F1A2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C60D2CB32A6AD0580070F1A2 /* Tests_macOSLaunchTests.swift in Sources */,
+				C60D2CB12A6AD0580070F1A2 /* Tests_macOS.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C60D2CA22A6AD0570070F1A2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C60D2C922A6AD0570070F1A2 /* Mechwar (iOS) */;
+			targetProxy = C60D2CA12A6AD0570070F1A2 /* PBXContainerItemProxy */;
+		};
+		C60D2CAE2A6AD0580070F1A2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C60D2C982A6AD0570070F1A2 /* Mechwar (macOS) */;
+			targetProxy = C60D2CAD2A6AD0580070F1A2 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		C60D2CBA2A6AD0580070F1A2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		C60D2CBB2A6AD0580070F1A2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		C60D2CBD2A6AD0580070F1A2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Mechwar (iOS).entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = SVY23N26W4;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Mechwar--iOS--Info.plist";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mycompany.cspapp;
+				PRODUCT_NAME = Mechwar;
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C60D2CBE2A6AD0580070F1A2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Mechwar (iOS)Release.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = SVY23N26W4;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Mechwar--iOS--Info.plist";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mycompany.cspapp;
+				PRODUCT_NAME = Mechwar;
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C60D2CC02A6AD0580070F1A2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = SVY23N26W4;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = CSP.Mechwar;
+				PRODUCT_NAME = Mechwar;
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		C60D2CC12A6AD0580070F1A2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = SVY23N26W4;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = CSP.Mechwar;
+				PRODUCT_NAME = Mechwar;
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		C60D2CC32A6AD0580070F1A2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = SVY23N26W4;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "CSP.Tests-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Mechwar (iOS)";
+			};
+			name = Debug;
+		};
+		C60D2CC42A6AD0580070F1A2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = SVY23N26W4;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "CSP.Tests-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Mechwar (iOS)";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C60D2CC62A6AD0580070F1A2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = SVY23N26W4;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "CSP.Tests-macOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = "Mechwar (macOS)";
+			};
+			name = Debug;
+		};
+		C60D2CC72A6AD0580070F1A2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = SVY23N26W4;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "CSP.Tests-macOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_TARGET_NAME = "Mechwar (macOS)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C60D2C8A2A6AD0560070F1A2 /* Build configuration list for PBXProject "Mechwar" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C60D2CBA2A6AD0580070F1A2 /* Debug */,
+				C60D2CBB2A6AD0580070F1A2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C60D2CBC2A6AD0580070F1A2 /* Build configuration list for PBXNativeTarget "Mechwar (iOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C60D2CBD2A6AD0580070F1A2 /* Debug */,
+				C60D2CBE2A6AD0580070F1A2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C60D2CBF2A6AD0580070F1A2 /* Build configuration list for PBXNativeTarget "Mechwar (macOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C60D2CC02A6AD0580070F1A2 /* Debug */,
+				C60D2CC12A6AD0580070F1A2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C60D2CC22A6AD0580070F1A2 /* Build configuration list for PBXNativeTarget "Tests iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C60D2CC32A6AD0580070F1A2 /* Debug */,
+				C60D2CC42A6AD0580070F1A2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C60D2CC52A6AD0580070F1A2 /* Build configuration list for PBXNativeTarget "Tests macOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C60D2CC62A6AD0580070F1A2 /* Debug */,
+				C60D2CC72A6AD0580070F1A2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C60D2C872A6AD0560070F1A2 /* Project object */;
+}
