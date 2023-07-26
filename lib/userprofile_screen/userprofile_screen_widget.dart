@@ -1,4 +1,5 @@
 import 'package:c_s_p_app/index.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 import '../Models/user_info_model.dart';
 import '../Services/GetUserRowg.dart';
@@ -121,9 +122,9 @@ class _UserprofileScreenWidgetState extends State<UserprofileScreenWidget>
                     child: Text(
                       '${userInfo.email}',
                       style: FlutterFlowTheme.of(context).subtitle2.override(
-                            fontFamily: 'Lato',
-                            color: FlutterFlowTheme.of(context).primaryColor,
-                          ),
+                        fontFamily: 'Lato',
+                        color: FlutterFlowTheme.of(context).primaryColor,
+                      ),
                     ),
                   ),
                   Divider(
@@ -388,7 +389,7 @@ class _UserprofileScreenWidgetState extends State<UserprofileScreenWidget>
                         ),
                       ),
                     ),
-                   ),
+                  ),
                   GestureDetector(
                     onTap: (){
                       Navigator.push(context, MaterialPageRoute(builder: (context)=>AboutUsPage()));
@@ -422,6 +423,69 @@ class _UserprofileScreenWidgetState extends State<UserprofileScreenWidget>
                                 padding: EdgeInsetsDirectional.fromSTEB(12, 0, 0, 0),
                                 child: Text(
                                   'About us',
+                                  style: FlutterFlowTheme.of(context).bodyText2,
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  GestureDetector(
+                    onTap: () async {
+                      showDialog(
+                        context: context,
+                        builder: (BuildContext context) {
+                          return DeleteDialog();
+                        },
+                      ).then((confirmed) async {
+                        if (confirmed != null && confirmed) {
+                          User? user = FirebaseAuth.instance.currentUser;
+                        if (user != null) {
+                        await user.delete();
+                        await FirebaseAuth.instance.signOut();
+                        print("Account deleted successfully");
+                        } else {
+                        print("User is not logged in.");
+                        }
+                        removeUserDataLocally();
+                        Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (BuildContext context)=>SignInScreenWidget()),(route) => false,);
+                        } else {
+                        // User canceled the log out
+                        // ...
+                        }
+                      });
+                    },
+                    child: Padding(
+                      padding: EdgeInsetsDirectional.fromSTEB(16, 12, 16, 0),
+                      child: Container(
+                        width: double.infinity,
+                        decoration: BoxDecoration(
+                          color: FlutterFlowTheme.of(context).secondaryBackground,
+                          borderRadius: BorderRadius.circular(12),
+                          border: Border.all(
+                            color: Colors.red,
+                            width: 2,
+                          ),
+                        ),
+                        child: Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(8, 12, 8, 12),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.max,
+                            children: [
+                              Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(8, 0, 0, 0),
+                                child: Icon(
+                                  Icons.delete,
+                                  color: FlutterFlowTheme.of(context).primaryText,
+                                  size: 24,
+                                ),
+                              ),
+                              Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(12, 0, 0, 0),
+                                child: Text(
+                                  'Delete Account',
                                   style: FlutterFlowTheme.of(context).bodyText2,
                                 ),
                               ),
@@ -477,9 +541,10 @@ class _UserprofileScreenWidgetState extends State<UserprofileScreenWidget>
                           builder: (BuildContext context) {
                             return LogoutDialog();
                           },
-                        ).then((confirmed) {
+                        ).then((confirmed) async {
                           if (confirmed != null && confirmed) {
                             removeUserDataLocally();
+                            await FirebaseAuth.instance.signOut();
                             Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (BuildContext context)=>SignInScreenWidget()),(route) => false,);
                           } else {
                             // User canceled the log out
@@ -511,6 +576,7 @@ class _UserprofileScreenWidgetState extends State<UserprofileScreenWidget>
     );
   }
 }
+
 class LogoutDialog extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -580,6 +646,84 @@ class LogoutDialog extends StatelessWidget {
                     ),
                   ),
                   child: Text('Log Out'),
+                ),
+              ],
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+class DeleteDialog extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Dialog(
+      elevation: 8.0,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(16.0),
+      ),
+      child: Container(
+        decoration: BoxDecoration(
+          color: FlutterFlowTheme.of(context).secondaryBackground,
+          borderRadius: BorderRadius.circular(16.0),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withOpacity(0.1),
+              blurRadius: 10.0,
+              offset: Offset(0, 5),
+            ),
+          ],
+        ),
+        padding: EdgeInsets.all(16.0),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Icon(
+              Icons.logout,
+              size: 48.0,
+              color: Colors.red,
+            ),
+            SizedBox(height: 16.0),
+            Text(
+              'Are you sure you want to delete your account?',
+              style: TextStyle(
+                fontSize: 18.0,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            SizedBox(height: 16.0),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                ElevatedButton(
+                  onPressed: () => Navigator.of(context).pop(false),
+                  style: ElevatedButton.styleFrom(
+                    primary: Colors.grey[200],
+                    onPrimary: Colors.black,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(8.0),
+                    ),
+                    padding: EdgeInsets.symmetric(
+                      vertical: 12.0,
+                      horizontal: 24.0,
+                    ),
+                  ),
+                  child: Text('Cancel'),
+                ),
+                ElevatedButton(
+                  onPressed: () => Navigator.of(context).pop(true),
+                  style: ElevatedButton.styleFrom(
+                    primary: Colors.red,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(8.0),
+                    ),
+                    padding: EdgeInsets.symmetric(
+                      vertical: 12.0,
+                      horizontal: 24.0,
+                    ),
+                  ),
+                  child: Text('Delete'),
                 ),
               ],
             ),

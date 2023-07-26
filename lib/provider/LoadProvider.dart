@@ -1,5 +1,6 @@
 
 import 'package:c_s_p_app/Models/activities_model.dart';
+import 'package:c_s_p_app/flutter_flow/flutter_flow_theme.dart';
 import 'package:flutter/material.dart';
 import '../Models/hotel_model.dart';
 import '../Models/markers_model.dart';
@@ -18,7 +19,6 @@ import '../Services/Restaurants.dart';
 import '../Services/UserInfo.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:permission_handler/permission_handler.dart';
-
 
 class LoadProvider extends ChangeNotifier {
   late Payload user=Payload(rowguid: '', name: '', email: '', profile: '');
@@ -98,32 +98,19 @@ class LoadProvider extends ChangeNotifier {
     notifyListeners();
   }
 
-  Future<bool> checkLocationPermission() async {
+  Future<bool> checkLocationPermission(BuildContext context) async {
     // Check if the location permission is granted
-    var status = await Permission.location.status;
-
-    if (status.isGranted) {
-      // Location permission is already granted
-      return true;
-    } else if (status.isDenied) {
-      // Location permission is denied, show a dialog to request permission
-      var isPermanentlyDenied = await Permission.location.isPermanentlyDenied;
-
-      if (isPermanentlyDenied) {
-        // Location permission is permanently denied, open app settings
-        openAppSettings();
-      } else {
-        // Location permission is denied, request permission
-        var result = await Permission.location.request();
-
-        if (result.isGranted) {
-          // Location permission granted
-          return true;
-        }
+    PermissionStatus _permissionStatus;
+    _permissionStatus = await Permission.locationWhenInUse.status;
+    if (!_permissionStatus.isGranted) {
+      if (_permissionStatus.isDenied) {
+        await Permission.locationWhenInUse.request();
       }
+      return true;
+      // You can also handle other cases like PermanentlyDenied, Restricted, etc.
     }
-
-    // Location permission is not granted
-    return false;
+    else{
+      return true;
+    }
   }
 }

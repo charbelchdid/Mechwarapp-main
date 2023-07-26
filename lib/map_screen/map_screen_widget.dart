@@ -24,7 +24,6 @@ class _MapScreenWidgetState extends State<MapScreenWidget> {
     final provider = Provider.of<LoadProvider>(context, listen: false);
     markers=provider.markers2;
     _getCurrentLocation();
-    provider.checkLocationPermission();
   }
 
 
@@ -44,7 +43,6 @@ class _MapScreenWidgetState extends State<MapScreenWidget> {
 
   @override
   Widget build(BuildContext context) {
-    final provider = Provider.of<LoadProvider>(context, listen: false);
     return Scaffold(
       appBar: AppBar(
         title: Text('Map'),
@@ -52,44 +50,27 @@ class _MapScreenWidgetState extends State<MapScreenWidget> {
         toolbarHeight: 60,
         backgroundColor: FlutterFlowTheme.of(context).primaryColor,
       ),
-      key: scaffoldKey,
-      resizeToAvoidBottomInset: false,
       backgroundColor: Color(0xFFEFEFEF),
       //sk.eyJ1IjoiY2hhcmJlbGNoZGlkIiwiYSI6ImNsamxiOW1xczByaG8za251dWJza2JpZGgifQ.-CDy5CKJ9z6R-R1b5EgoiA
-      body: (_currentPosition != null)
-          ?
-      Stack(
-                  children: [
-                    Align(
-                        alignment: AlignmentDirectional(0, 0),
-                        child: Container(
-                          height: MediaQuery.of(context).size.height * 1,
-                          decoration: BoxDecoration(),
-
-                          child:  GoogleMap(
-                            compassEnabled: true,
-                            mapType: MapType.normal,
-                            myLocationButtonEnabled: true,
-                            myLocationEnabled: true,
-                            initialCameraPosition: CameraPosition(
-                              target: LatLng(
-                                _currentPosition!.latitude,
-                                _currentPosition!.longitude,
-                              ),
-                              zoom: 15.0,
-                            ),
-                            onMapCreated: (GoogleMapController controller) {
-                              _mapController = controller;
-                            },
-                            markers: markers, // Empty set of markers
-                            polylines: Set<Polyline>(), // Empty set of polylines
-                          ),
-                        )
-                    )
-                  ]
-              ):Center(
-        child: CircularProgressIndicator(),
-      ),
+      body:
+      GoogleMap(
+        compassEnabled: true,
+        mapType: MapType.normal,
+        myLocationButtonEnabled: true,
+        myLocationEnabled: true,
+        initialCameraPosition: CameraPosition(
+          target: LatLng(
+            _currentPosition != null?_currentPosition!.latitude:34.29061674758329,
+            _currentPosition != null?_currentPosition!.longitude:35.9662007813596,
+          ),
+          zoom: 15.0,
+        ),
+        onMapCreated: (GoogleMapController controller) {
+          _mapController = controller;
+        },
+        markers: markers, // Empty set of markers
+        polylines: Set<Polyline>(), // Empty set of polylines
+      )
     );
   }
 }

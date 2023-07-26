@@ -14,6 +14,7 @@ import '../select_region_screen/select_region_screen_widget.dart';
 import 'sign_in_screen_model.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 export 'sign_in_screen_model.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class SignInScreenWidget extends StatefulWidget {
   const SignInScreenWidget({Key? key}) : super(key: key);
@@ -54,7 +55,7 @@ class _SignInScreenWidgetState extends State<SignInScreenWidget> {
     return Scaffold(
       key: scaffoldKey,
       backgroundColor:
-          FlutterFlowTheme.of(context).primaryBackground, //Color(0xFF14181B),
+      FlutterFlowTheme.of(context).primaryBackground, //Color(0xFF14181B),
       body: GestureDetector(
         onTap: () => FocusScope.of(context).requestFocus(_unfocusNode),
         child: Container(
@@ -87,10 +88,10 @@ class _SignInScreenWidgetState extends State<SignInScreenWidget> {
                         TabBar(
                           isScrollable: true,
                           labelColor:
-                              FlutterFlowTheme.of(context).primaryColor,
+                          FlutterFlowTheme.of(context).primaryColor,
                           labelStyle: FlutterFlowTheme.of(context).subtitle1,
                           indicatorColor:
-                              FlutterFlowTheme.of(context).primaryColor,
+                          FlutterFlowTheme.of(context).primaryColor,
                           tabs: [
                             Tab(
                               text: 'Sign In',
@@ -112,8 +113,8 @@ class _SignInScreenWidgetState extends State<SignInScreenWidget> {
                                     children: [
                                       Padding(
                                         padding:
-                                            EdgeInsetsDirectional.fromSTEB(
-                                                0, 20, 0, 0),
+                                        EdgeInsetsDirectional.fromSTEB(
+                                            0, 20, 0, 0),
                                         child: TextFormField(
                                           controller: _model
                                               .emailAddressLoginController,
@@ -121,18 +122,18 @@ class _SignInScreenWidgetState extends State<SignInScreenWidget> {
                                           decoration: InputDecoration(
                                             labelText: 'Email Address',
                                             labelStyle: FlutterFlowTheme.of(
-                                                    context)
+                                                context)
                                                 .bodyText1
                                                 .override(
-                                                  fontFamily: 'Lexend Deca',
-                                                  color: Color(0xFF95A1AC),
-                                                  fontSize: 14,
-                                                  fontWeight:
-                                                      FontWeight.normal,
-                                                ),
+                                              fontFamily: 'Lexend Deca',
+                                              color: Color(0xFF95A1AC),
+                                              fontSize: 14,
+                                              fontWeight:
+                                              FontWeight.normal,
+                                            ),
                                             hintStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodyText1,
+                                            FlutterFlowTheme.of(context)
+                                                .bodyText1,
                                             // .override(
                                             //   fontFamily: 'Lexend Deca',
                                             //   color: Color(0xFF95A1AC),
@@ -146,7 +147,7 @@ class _SignInScreenWidgetState extends State<SignInScreenWidget> {
                                                 width: 1,
                                               ),
                                               borderRadius:
-                                                  BorderRadius.circular(8),
+                                              BorderRadius.circular(8),
                                             ),
                                             focusedBorder: OutlineInputBorder(
                                               borderSide: BorderSide(
@@ -154,7 +155,7 @@ class _SignInScreenWidgetState extends State<SignInScreenWidget> {
                                                 width: 1,
                                               ),
                                               borderRadius:
-                                                  BorderRadius.circular(8),
+                                              BorderRadius.circular(8),
                                             ),
                                             errorBorder: OutlineInputBorder(
                                               borderSide: BorderSide(
@@ -162,22 +163,22 @@ class _SignInScreenWidgetState extends State<SignInScreenWidget> {
                                                 width: 1,
                                               ),
                                               borderRadius:
-                                                  BorderRadius.circular(8),
+                                              BorderRadius.circular(8),
                                             ),
                                             focusedErrorBorder:
-                                                OutlineInputBorder(
+                                            OutlineInputBorder(
                                               borderSide: BorderSide(
                                                 //color: Color(0x00000000),
                                                 width: 1,
                                               ),
                                               borderRadius:
-                                                  BorderRadius.circular(8),
+                                              BorderRadius.circular(8),
                                             ),
                                             filled: true,
                                             fillColor: Colors.white,
                                             contentPadding:
-                                                EdgeInsetsDirectional
-                                                    .fromSTEB(20, 24, 20, 24),
+                                            EdgeInsetsDirectional
+                                                .fromSTEB(20, 24, 20, 24),
                                           ),
                                           style: FlutterFlowTheme.of(context)
                                               .subtitle2,
@@ -192,42 +193,42 @@ class _SignInScreenWidgetState extends State<SignInScreenWidget> {
                                       ),
                                       Padding(
                                         padding:
-                                            EdgeInsetsDirectional.fromSTEB(
-                                                0, 12, 0, 0),
+                                        EdgeInsetsDirectional.fromSTEB(
+                                            0, 12, 0, 0),
                                         child: TextFormField(
                                           controller:
-                                              _model.passwordLoginController,
+                                          _model.passwordLoginController,
                                           obscureText:
-                                              !_model.passwordLoginVisibility,
+                                          !_model.passwordLoginVisibility,
                                           decoration: InputDecoration(
                                             labelText: 'Password',
                                             labelStyle: FlutterFlowTheme.of(
-                                                    context)
+                                                context)
                                                 .bodyText1
                                                 .override(
-                                                  fontFamily: 'Lexend Deca',
-                                                  color: Color(0xFF95A1AC),
-                                                  fontSize: 14,
-                                                  fontWeight:
-                                                      FontWeight.normal,
-                                                ),
+                                              fontFamily: 'Lexend Deca',
+                                              color: Color(0xFF95A1AC),
+                                              fontSize: 14,
+                                              fontWeight:
+                                              FontWeight.normal,
+                                            ),
                                             hintStyle: FlutterFlowTheme.of(
-                                                    context)
+                                                context)
                                                 .bodyText1
                                                 .override(
-                                                  fontFamily: 'Lexend Deca',
-                                                  color: Color(0xFF95A1AC),
-                                                  fontSize: 14,
-                                                  fontWeight:
-                                                      FontWeight.normal,
-                                                ),
+                                              fontFamily: 'Lexend Deca',
+                                              color: Color(0xFF95A1AC),
+                                              fontSize: 14,
+                                              fontWeight:
+                                              FontWeight.normal,
+                                            ),
                                             enabledBorder: OutlineInputBorder(
                                               borderSide: BorderSide(
                                                 //color: Color(0x00000000),
                                                 width: 1,
                                               ),
                                               borderRadius:
-                                                  BorderRadius.circular(8),
+                                              BorderRadius.circular(8),
                                             ),
                                             focusedBorder: OutlineInputBorder(
                                               borderSide: BorderSide(
@@ -235,7 +236,7 @@ class _SignInScreenWidgetState extends State<SignInScreenWidget> {
                                                 width: 1,
                                               ),
                                               borderRadius:
-                                                  BorderRadius.circular(8),
+                                              BorderRadius.circular(8),
                                             ),
                                             errorBorder: OutlineInputBorder(
                                               borderSide: BorderSide(
@@ -243,37 +244,37 @@ class _SignInScreenWidgetState extends State<SignInScreenWidget> {
                                                 width: 1,
                                               ),
                                               borderRadius:
-                                                  BorderRadius.circular(8),
+                                              BorderRadius.circular(8),
                                             ),
                                             focusedErrorBorder:
-                                                OutlineInputBorder(
+                                            OutlineInputBorder(
                                               borderSide: BorderSide(
                                                 //color: Color(0x00000000),
                                                 width: 1,
                                               ),
                                               borderRadius:
-                                                  BorderRadius.circular(8),
+                                              BorderRadius.circular(8),
                                             ),
                                             filled: true,
                                             fillColor: Colors.white,
                                             contentPadding:
-                                                EdgeInsetsDirectional
-                                                    .fromSTEB(20, 24, 20, 24),
+                                            EdgeInsetsDirectional
+                                                .fromSTEB(20, 24, 20, 24),
                                             suffixIcon: InkWell(
                                               onTap: () => setState(
-                                                () => _model
-                                                        .passwordLoginVisibility =
-                                                    !_model
-                                                        .passwordLoginVisibility,
+                                                    () => _model
+                                                    .passwordLoginVisibility =
+                                                !_model
+                                                    .passwordLoginVisibility,
                                               ),
                                               focusNode: FocusNode(
                                                   skipTraversal: true),
                                               child: Icon(
                                                 _model.passwordLoginVisibility
                                                     ? Icons
-                                                        .visibility_outlined
+                                                    .visibility_outlined
                                                     : Icons
-                                                        .visibility_off_outlined,
+                                                    .visibility_off_outlined,
                                                 color: Color(0xFF95A1AC),
                                                 size: 20,
                                               ),
@@ -292,18 +293,18 @@ class _SignInScreenWidgetState extends State<SignInScreenWidget> {
                                       ),
                                       Padding(
                                         padding:
-                                            EdgeInsetsDirectional.fromSTEB(
-                                                0, 24, 0, 0),
+                                        EdgeInsetsDirectional.fromSTEB(
+                                            0, 24, 0, 0),
                                         child: FFButtonWidget(
                                           onPressed: () {
                                             Auth()
                                                 .signInWithEmailAndPassword(
-                                                    email: _model
-                                                        .emailAddressLoginController
-                                                        .text,
-                                                    password: _model
-                                                        .passwordLoginController
-                                                        .text)
+                                                email: _model
+                                                    .emailAddressLoginController
+                                                    .text,
+                                                password: _model
+                                                    .passwordLoginController
+                                                    .text)
                                                 .then((value) {
                                               saveUserDataLocally(
                                                   _model
@@ -311,19 +312,19 @@ class _SignInScreenWidgetState extends State<SignInScreenWidget> {
                                                       .text,
                                                   'charbel');
                                               return {
-                                                provider.getUserInfo(
-                                                    0, context),
-                                                Navigator.pushReplacement(
-                                                    context,
-                                                    MaterialPageRoute(
-                                                        builder: (context) =>
-                                                            SelectRegionScreenWidget()))
+                                              provider.getUserInfo(
+                                                  0, context),
+                                              Navigator.pushReplacement(
+                                              context,
+                                              MaterialPageRoute(
+                                              builder: (context) =>
+                                              SelectRegionScreenWidget()))
                                               };
                                             }).onError((error, stackTrace) {
                                               String errorMessage =
-                                                  error.toString();
+                                              error.toString();
                                               int index =
-                                                  errorMessage.indexOf("]");
+                                              errorMessage.indexOf("]");
                                               String substring = errorMessage;
                                               if (index != -1 &&
                                                   index <
@@ -342,20 +343,20 @@ class _SignInScreenWidgetState extends State<SignInScreenWidget> {
                                             width: 230,
                                             height: 50,
                                             color:
-                                                FlutterFlowTheme.of(context)
-                                                    .primaryColor,
+                                            FlutterFlowTheme.of(context)
+                                                .primaryColor,
                                             textStyle: FlutterFlowTheme.of(
-                                                    context)
+                                                context)
                                                 .subtitle2
                                                 .override(
-                                                  fontFamily: 'Lexend Deca',
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .primaryBtnText,
-                                                  fontSize: 16,
-                                                  fontWeight:
-                                                      FontWeight.normal,
-                                                ),
+                                              fontFamily: 'Lexend Deca',
+                                              color: FlutterFlowTheme.of(
+                                                  context)
+                                                  .primaryBtnText,
+                                              fontSize: 16,
+                                              fontWeight:
+                                              FontWeight.normal,
+                                            ),
                                             elevation: 3,
                                             borderSide: BorderSide(
                                               color: Colors.transparent,
@@ -366,8 +367,8 @@ class _SignInScreenWidgetState extends State<SignInScreenWidget> {
                                       ),
                                       Padding(
                                         padding:
-                                            EdgeInsetsDirectional.fromSTEB(
-                                                0, 20, 0, 0),
+                                        EdgeInsetsDirectional.fromSTEB(
+                                            0, 20, 0, 0),
                                         child: FFButtonWidget(
                                           onPressed: () async {
                                             Navigator.push(
@@ -382,8 +383,8 @@ class _SignInScreenWidgetState extends State<SignInScreenWidget> {
                                             height: 40,
                                             color: Color(0x0039D2C0),
                                             textStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .subtitle1,
+                                            FlutterFlowTheme.of(context)
+                                                .subtitle1,
                                             // .override(
                                             //   fontFamily: 'Lato',
                                             //   color:
@@ -413,27 +414,27 @@ class _SignInScreenWidgetState extends State<SignInScreenWidget> {
                                     children: [
                                       Padding(
                                         padding:
-                                            EdgeInsetsDirectional.fromSTEB(
-                                                0, 20, 0, 0),
+                                        EdgeInsetsDirectional.fromSTEB(
+                                            0, 20, 0, 0),
                                         child: TextFormField(
                                           controller:
-                                              _model.emailAddressController,
+                                          _model.emailAddressController,
                                           obscureText: false,
                                           decoration: InputDecoration(
                                             labelText: 'Email Address',
                                             labelStyle: FlutterFlowTheme.of(
-                                                    context)
+                                                context)
                                                 .bodyText1
                                                 .override(
-                                                  fontFamily: 'Lexend Deca',
-                                                  color: Color(0xFF95A1AC),
-                                                  fontSize: 14,
-                                                  fontWeight:
-                                                      FontWeight.normal,
-                                                ),
+                                              fontFamily: 'Lexend Deca',
+                                              color: Color(0xFF95A1AC),
+                                              fontSize: 14,
+                                              fontWeight:
+                                              FontWeight.normal,
+                                            ),
                                             hintStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodyText1,
+                                            FlutterFlowTheme.of(context)
+                                                .bodyText1,
                                             // .override(
                                             //   fontFamily: 'Lexend Deca',
                                             //   color: Color(0xFF95A1AC),
@@ -447,7 +448,7 @@ class _SignInScreenWidgetState extends State<SignInScreenWidget> {
                                                 width: 1,
                                               ),
                                               borderRadius:
-                                                  BorderRadius.circular(8),
+                                              BorderRadius.circular(8),
                                             ),
                                             focusedBorder: OutlineInputBorder(
                                               borderSide: BorderSide(
@@ -455,7 +456,7 @@ class _SignInScreenWidgetState extends State<SignInScreenWidget> {
                                                 width: 1,
                                               ),
                                               borderRadius:
-                                                  BorderRadius.circular(8),
+                                              BorderRadius.circular(8),
                                             ),
                                             errorBorder: OutlineInputBorder(
                                               borderSide: BorderSide(
@@ -463,22 +464,22 @@ class _SignInScreenWidgetState extends State<SignInScreenWidget> {
                                                 width: 1,
                                               ),
                                               borderRadius:
-                                                  BorderRadius.circular(8),
+                                              BorderRadius.circular(8),
                                             ),
                                             focusedErrorBorder:
-                                                OutlineInputBorder(
+                                            OutlineInputBorder(
                                               borderSide: BorderSide(
                                                 //color: Color(0x00000000),
                                                 width: 1,
                                               ),
                                               borderRadius:
-                                                  BorderRadius.circular(8),
+                                              BorderRadius.circular(8),
                                             ),
                                             filled: true,
                                             fillColor: Colors.white,
                                             contentPadding:
-                                                EdgeInsetsDirectional
-                                                    .fromSTEB(20, 24, 20, 24),
+                                            EdgeInsetsDirectional
+                                                .fromSTEB(20, 24, 20, 24),
                                           ),
                                           style: FlutterFlowTheme.of(context)
                                               .subtitle2,
@@ -489,26 +490,26 @@ class _SignInScreenWidgetState extends State<SignInScreenWidget> {
                                       ),
                                       Padding(
                                         padding:
-                                            EdgeInsetsDirectional.fromSTEB(
-                                                0, 20, 0, 0),
+                                        EdgeInsetsDirectional.fromSTEB(
+                                            0, 20, 0, 0),
                                         child: TextFormField(
                                           controller: _model.nameController,
                                           obscureText: false,
                                           decoration: InputDecoration(
                                             labelText: 'Username',
                                             labelStyle: FlutterFlowTheme.of(
-                                                    context)
+                                                context)
                                                 .bodyText1
                                                 .override(
-                                                  fontFamily: 'Lexend Deca',
-                                                  color: Color(0xFF95A1AC),
-                                                  fontSize: 14,
-                                                  fontWeight:
-                                                      FontWeight.normal,
-                                                ),
+                                              fontFamily: 'Lexend Deca',
+                                              color: Color(0xFF95A1AC),
+                                              fontSize: 14,
+                                              fontWeight:
+                                              FontWeight.normal,
+                                            ),
                                             hintStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodyText1,
+                                            FlutterFlowTheme.of(context)
+                                                .bodyText1,
                                             // .override(
                                             //   fontFamily: 'Lexend Deca',
                                             //   color: Color(0xFF95A1AC),
@@ -522,7 +523,7 @@ class _SignInScreenWidgetState extends State<SignInScreenWidget> {
                                                 width: 1,
                                               ),
                                               borderRadius:
-                                                  BorderRadius.circular(8),
+                                              BorderRadius.circular(8),
                                             ),
                                             focusedBorder: OutlineInputBorder(
                                               borderSide: BorderSide(
@@ -530,7 +531,7 @@ class _SignInScreenWidgetState extends State<SignInScreenWidget> {
                                                 width: 1,
                                               ),
                                               borderRadius:
-                                                  BorderRadius.circular(8),
+                                              BorderRadius.circular(8),
                                             ),
                                             errorBorder: OutlineInputBorder(
                                               borderSide: BorderSide(
@@ -538,22 +539,22 @@ class _SignInScreenWidgetState extends State<SignInScreenWidget> {
                                                 width: 1,
                                               ),
                                               borderRadius:
-                                                  BorderRadius.circular(8),
+                                              BorderRadius.circular(8),
                                             ),
                                             focusedErrorBorder:
-                                                OutlineInputBorder(
+                                            OutlineInputBorder(
                                               borderSide: BorderSide(
                                                 //color: Color(0x00000000),
                                                 width: 1,
                                               ),
                                               borderRadius:
-                                                  BorderRadius.circular(8),
+                                              BorderRadius.circular(8),
                                             ),
                                             filled: true,
                                             fillColor: Colors.white,
                                             contentPadding:
-                                                EdgeInsetsDirectional
-                                                    .fromSTEB(20, 24, 20, 24),
+                                            EdgeInsetsDirectional
+                                                .fromSTEB(20, 24, 20, 24),
                                           ),
                                           style: FlutterFlowTheme.of(context)
                                               .subtitle2,
@@ -564,28 +565,28 @@ class _SignInScreenWidgetState extends State<SignInScreenWidget> {
                                       ),
                                       Padding(
                                         padding:
-                                            EdgeInsetsDirectional.fromSTEB(
-                                                0, 12, 0, 0),
+                                        EdgeInsetsDirectional.fromSTEB(
+                                            0, 12, 0, 0),
                                         child: TextFormField(
                                           controller:
-                                              _model.passwordController,
+                                          _model.passwordController,
                                           obscureText:
-                                              !_model.passwordVisibility,
+                                          !_model.passwordVisibility,
                                           decoration: InputDecoration(
                                             labelText: 'Password',
                                             labelStyle: FlutterFlowTheme.of(
-                                                    context)
+                                                context)
                                                 .bodyText1
                                                 .override(
-                                                  fontFamily: 'Lexend Deca',
-                                                  color: Color(0xFF95A1AC),
-                                                  fontSize: 14,
-                                                  fontWeight:
-                                                      FontWeight.normal,
-                                                ),
+                                              fontFamily: 'Lexend Deca',
+                                              color: Color(0xFF95A1AC),
+                                              fontSize: 14,
+                                              fontWeight:
+                                              FontWeight.normal,
+                                            ),
                                             hintStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodyText1,
+                                            FlutterFlowTheme.of(context)
+                                                .bodyText1,
                                             // .override(
                                             //   fontFamily: 'Lexend Deca',
                                             //   color: Color(0xFF95A1AC),
@@ -599,7 +600,7 @@ class _SignInScreenWidgetState extends State<SignInScreenWidget> {
                                                 width: 1,
                                               ),
                                               borderRadius:
-                                                  BorderRadius.circular(8),
+                                              BorderRadius.circular(8),
                                             ),
                                             focusedBorder: OutlineInputBorder(
                                               borderSide: BorderSide(
@@ -607,7 +608,7 @@ class _SignInScreenWidgetState extends State<SignInScreenWidget> {
                                                 width: 1,
                                               ),
                                               borderRadius:
-                                                  BorderRadius.circular(8),
+                                              BorderRadius.circular(8),
                                             ),
                                             errorBorder: OutlineInputBorder(
                                               borderSide: BorderSide(
@@ -615,37 +616,37 @@ class _SignInScreenWidgetState extends State<SignInScreenWidget> {
                                                 width: 1,
                                               ),
                                               borderRadius:
-                                                  BorderRadius.circular(8),
+                                              BorderRadius.circular(8),
                                             ),
                                             focusedErrorBorder:
-                                                OutlineInputBorder(
+                                            OutlineInputBorder(
                                               borderSide: BorderSide(
                                                 //color: Color(0x00000000),
                                                 width: 1,
                                               ),
                                               borderRadius:
-                                                  BorderRadius.circular(8),
+                                              BorderRadius.circular(8),
                                             ),
                                             filled: true,
                                             fillColor: Colors.white,
                                             contentPadding:
-                                                EdgeInsetsDirectional
-                                                    .fromSTEB(20, 24, 20, 24),
+                                            EdgeInsetsDirectional
+                                                .fromSTEB(20, 24, 20, 24),
                                             suffixIcon: InkWell(
                                               onTap: () => setState(
-                                                () => _model
-                                                        .passwordVisibility =
-                                                    !_model
-                                                        .passwordVisibility,
+                                                    () => _model
+                                                    .passwordVisibility =
+                                                !_model
+                                                    .passwordVisibility,
                                               ),
                                               focusNode: FocusNode(
                                                   skipTraversal: true),
                                               child: Icon(
                                                 _model.passwordVisibility
                                                     ? Icons
-                                                        .visibility_outlined
+                                                    .visibility_outlined
                                                     : Icons
-                                                        .visibility_off_outlined,
+                                                    .visibility_off_outlined,
                                                 color: Color(0xFF95A1AC),
                                                 size: 20,
                                               ),
@@ -660,8 +661,8 @@ class _SignInScreenWidgetState extends State<SignInScreenWidget> {
                                       ),
                                       Padding(
                                         padding:
-                                            EdgeInsetsDirectional.fromSTEB(
-                                                0, 12, 0, 0),
+                                        EdgeInsetsDirectional.fromSTEB(
+                                            0, 12, 0, 0),
                                         child: TextFormField(
                                           controller: _model
                                               .passwordConfirmController,
@@ -670,18 +671,18 @@ class _SignInScreenWidgetState extends State<SignInScreenWidget> {
                                           decoration: InputDecoration(
                                             labelText: 'Confirm Password',
                                             labelStyle: FlutterFlowTheme.of(
-                                                    context)
+                                                context)
                                                 .bodyText1
                                                 .override(
-                                                  fontFamily: 'Lexend Deca',
-                                                  color: Color(0xFF95A1AC),
-                                                  fontSize: 14,
-                                                  fontWeight:
-                                                      FontWeight.normal,
-                                                ),
+                                              fontFamily: 'Lexend Deca',
+                                              color: Color(0xFF95A1AC),
+                                              fontSize: 14,
+                                              fontWeight:
+                                              FontWeight.normal,
+                                            ),
                                             hintStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .bodyText1,
+                                            FlutterFlowTheme.of(context)
+                                                .bodyText1,
                                             // .override(
                                             //   fontFamily: 'Lexend Deca',
                                             //   color: Color(0xFF95A1AC),
@@ -695,7 +696,7 @@ class _SignInScreenWidgetState extends State<SignInScreenWidget> {
                                                 width: 1,
                                               ),
                                               borderRadius:
-                                                  BorderRadius.circular(8),
+                                              BorderRadius.circular(8),
                                             ),
                                             focusedBorder: OutlineInputBorder(
                                               borderSide: BorderSide(
@@ -703,7 +704,7 @@ class _SignInScreenWidgetState extends State<SignInScreenWidget> {
                                                 width: 1,
                                               ),
                                               borderRadius:
-                                                  BorderRadius.circular(8),
+                                              BorderRadius.circular(8),
                                             ),
                                             errorBorder: OutlineInputBorder(
                                               borderSide: BorderSide(
@@ -711,37 +712,37 @@ class _SignInScreenWidgetState extends State<SignInScreenWidget> {
                                                 width: 1,
                                               ),
                                               borderRadius:
-                                                  BorderRadius.circular(8),
+                                              BorderRadius.circular(8),
                                             ),
                                             focusedErrorBorder:
-                                                OutlineInputBorder(
+                                            OutlineInputBorder(
                                               borderSide: BorderSide(
                                                 // color: Color(0x00000000),
                                                 width: 1,
                                               ),
                                               borderRadius:
-                                                  BorderRadius.circular(8),
+                                              BorderRadius.circular(8),
                                             ),
                                             filled: true,
                                             fillColor: Colors.white,
                                             contentPadding:
-                                                EdgeInsetsDirectional
-                                                    .fromSTEB(20, 24, 20, 24),
+                                            EdgeInsetsDirectional
+                                                .fromSTEB(20, 24, 20, 24),
                                             suffixIcon: InkWell(
                                               onTap: () => setState(
-                                                () => _model
-                                                        .passwordConfirmVisibility =
-                                                    !_model
-                                                        .passwordConfirmVisibility,
+                                                    () => _model
+                                                    .passwordConfirmVisibility =
+                                                !_model
+                                                    .passwordConfirmVisibility,
                                               ),
                                               focusNode: FocusNode(
                                                   skipTraversal: true),
                                               child: Icon(
                                                 _model.passwordConfirmVisibility
                                                     ? Icons
-                                                        .visibility_outlined
+                                                    .visibility_outlined
                                                     : Icons
-                                                        .visibility_off_outlined,
+                                                    .visibility_off_outlined,
                                                 color: Color(0xFF95A1AC),
                                                 size: 20,
                                               ),
@@ -756,18 +757,18 @@ class _SignInScreenWidgetState extends State<SignInScreenWidget> {
                                       ),
                                       Padding(
                                         padding:
-                                            EdgeInsetsDirectional.fromSTEB(
-                                                0, 24, 0, 0),
+                                        EdgeInsetsDirectional.fromSTEB(
+                                            0, 24, 0, 0),
                                         child: FFButtonWidget(
                                           onPressed: () {
                                             Auth()
                                                 .createUserWithEmailAndPassword(
-                                                    email: _model
-                                                        .emailAddressController
-                                                        .text,
-                                                    password: _model
-                                                        .passwordController
-                                                        .text)
+                                                email: _model
+                                                    .emailAddressController
+                                                    .text,
+                                                password: _model
+                                                    .passwordController
+                                                    .text)
                                                 .then((value) {
                                               addUser(
                                                   _model.nameController.text,
@@ -777,9 +778,9 @@ class _SignInScreenWidgetState extends State<SignInScreenWidget> {
                                               Auth().sendEmailVerification();
                                             }).onError((error, stackTrace) {
                                               String errorMessage =
-                                                  error.toString();
+                                              error.toString();
                                               int index =
-                                                  errorMessage.indexOf("]");
+                                              errorMessage.indexOf("]");
                                               String substring = errorMessage;
                                               if (index != -1 &&
                                                   index <
@@ -797,20 +798,20 @@ class _SignInScreenWidgetState extends State<SignInScreenWidget> {
                                             width: 230,
                                             height: 50,
                                             color:
-                                                FlutterFlowTheme.of(context)
-                                                    .primaryColor,
+                                            FlutterFlowTheme.of(context)
+                                                .primaryColor,
                                             textStyle: FlutterFlowTheme.of(
-                                                    context)
+                                                context)
                                                 .subtitle1
                                                 .override(
-                                                  fontFamily: 'Lexend Deca',
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .primaryBtnText,
-                                                  fontSize: 16,
-                                                  fontWeight:
-                                                      FontWeight.normal,
-                                                ),
+                                              fontFamily: 'Lexend Deca',
+                                              color: FlutterFlowTheme.of(
+                                                  context)
+                                                  .primaryBtnText,
+                                              fontSize: 16,
+                                              fontWeight:
+                                              FontWeight.normal,
+                                            ),
                                             elevation: 3,
                                             borderSide: BorderSide(
                                               color: Colors.transparent,

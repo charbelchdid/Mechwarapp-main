@@ -90,7 +90,7 @@ class SplashScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final provider = Provider.of<LoadProvider>(context, listen: false);
     List<Future> s = [
-      provider.checkLocationPermission(),
+      provider.checkLocationPermission(context),
       checkEmailFromLocalDatabase(context),
       provider.getRegionList(),
     provider.getMarker(context),
@@ -134,7 +134,7 @@ class SplashScreen extends StatelessWidget {
             //       child: Container(
             //         height: MediaQuery.of(context).size.height/2,
             //           width: MediaQuery.of(context).size.height/2,
-            //           child: Image.asset("assets/images/logo.png")
+            //           child: Image.asset("assets/images/1logo.jpeg")
             //       ),
             //     ),
             //     Container(
