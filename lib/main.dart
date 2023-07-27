@@ -100,12 +100,7 @@ class SplashScreen extends StatelessWidget {
       future: Future.wait(s),
       builder: (context, snapshot) {
         if (snapshot.connectionState == ConnectionState.done) {
-          if(provider.state==0){
-            return SignInScreenWidget();
-          }
-          else{
-            return SelectRegionScreenWidget();
-          }
+          return SelectRegionScreenWidget();
         }
         else {
           return Container(

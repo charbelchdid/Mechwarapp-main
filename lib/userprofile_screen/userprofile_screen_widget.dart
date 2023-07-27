@@ -53,6 +53,7 @@ class _UserprofileScreenWidgetState extends State<UserprofileScreenWidget>
       final provider = Provider.of<LoadProvider>(context, listen: true);
       userInfo=provider.user;
     });
+    final provider1 = Provider.of<LoadProvider>(context, listen: true);
     return Scaffold(
       key: scaffoldKey,
       backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
@@ -81,7 +82,28 @@ class _UserprofileScreenWidgetState extends State<UserprofileScreenWidget>
         centerTitle: false,
         elevation: 0,
       ),
-      body: SafeArea(
+      body: provider1.state==0?
+        Center(
+            child:FFButtonWidget(
+              onPressed: () {
+                Navigator.push(context,MaterialPageRoute(builder: (context)=>SignInScreenWidget()));
+              },
+              text: 'Sign in',
+              options: FFButtonOptions(
+                width: MediaQuery.of(context).size.width/1.2,
+                height: 44,
+                color: FlutterFlowTheme.of(context).primaryColor,
+                textStyle: FlutterFlowTheme.of(context).bodyText1,
+                elevation: 0,
+                borderSide: BorderSide(
+                  color: FlutterFlowTheme.of(context).lineColor,
+                  width: 1,
+                ),
+                borderRadius: BorderRadius.circular(38),
+              ),
+            ),
+        )
+            :SafeArea(
         child: GestureDetector(
           onTap: () => FocusScope.of(context).requestFocus(_unfocusNode),
           child: ListView(
@@ -434,6 +456,7 @@ class _UserprofileScreenWidgetState extends State<UserprofileScreenWidget>
                   ),
                   GestureDetector(
                     onTap: () async {
+                      int x=0;
                       showDialog(
                         context: context,
                         builder: (BuildContext context) {
@@ -444,14 +467,16 @@ class _UserprofileScreenWidgetState extends State<UserprofileScreenWidget>
                           User? user = FirebaseAuth.instance.currentUser;
                         if (user != null) {
                         await user.delete();
+                        setState(() {
+                        provider1.state=0;
+                        });
                         await FirebaseAuth.instance.signOut();
                         print("Account deleted successfully");
                         } else {
                         print("User is not logged in.");
                         }
                         removeUserDataLocally();
-                        Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (BuildContext context)=>SignInScreenWidget()),(route) => false,);
-                        } else {
+                    } else {
                         // User canceled the log out
                         // ...
                         }
@@ -544,8 +569,10 @@ class _UserprofileScreenWidgetState extends State<UserprofileScreenWidget>
                         ).then((confirmed) async {
                           if (confirmed != null && confirmed) {
                             removeUserDataLocally();
+                            setState(() {
+                              provider1.state=0;
+                            });
                             await FirebaseAuth.instance.signOut();
-                            Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (BuildContext context)=>SignInScreenWidget()),(route) => false,);
                           } else {
                             // User canceled the log out
                             // ...

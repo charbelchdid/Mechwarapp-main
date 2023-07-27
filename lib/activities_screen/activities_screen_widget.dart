@@ -26,7 +26,7 @@ class _ActivitiesScreenWidgetState extends State<ActivitiesScreenWidget> {
   void initState() {
     super.initState();
     final provider = Provider.of<LoadProvider>(context, listen: false);
-    provider.getActivity(widget.Regionrowguid,provider.userRowguid);
+    provider.getActivity(widget.Regionrowguid,provider.state==0?'c1b63fcf-b58e-4996-9679-48c9d38b6eef':provider.userRowguid);
     provider.getPlacesList(widget.Regionrowguid);
     provider.getRestaurants(widget.Regionrowguid);
     provider.getHotel(widget.Regionrowguid);

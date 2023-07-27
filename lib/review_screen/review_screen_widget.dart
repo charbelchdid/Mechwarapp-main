@@ -28,11 +28,13 @@ class _ReviewWidgetState extends State<ReviewWidget> {
   List<String> commentTexts = [];
   final TextEditingController commentController = TextEditingController();
   final FocusNode commentFocus = FocusNode();
-
+  int x=0;
   @override
   void initState() {
     super.initState();
     fetchReviews();
+    final provider = Provider.of<LoadProvider>(context, listen: false);
+    x=provider.state;
   }
 
   void fetchReviews() async {
@@ -75,13 +77,14 @@ class _ReviewWidgetState extends State<ReviewWidget> {
 
   @override
   Widget build(BuildContext context) {
+
     return Builder(
       builder: (context) {
         return Padding(
           padding: EdgeInsetsDirectional.fromSTEB(16, 0, 16, 0),
           child: Column(
             children: [
-              buildAddCommentSection(userrow),
+              x==0?Text('Please sign in to add reviews',style: FlutterFlowTheme.of(context).title2,):buildAddCommentSection(userrow),
               SizedBox(height: 16),
               Column(
                 children: [

@@ -80,6 +80,10 @@ class LoadProvider extends ChangeNotifier {
       Navigator.pop(context);
     }
   }
+  changeState(int s){
+    state=s;
+    notifyListeners();
+  }
   getActivity(String r,String user) async{
     loading = true;
     Ap = (await getActivities(r,user))!  ;

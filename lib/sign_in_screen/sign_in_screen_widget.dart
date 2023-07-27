@@ -313,7 +313,7 @@ class _SignInScreenWidgetState extends State<SignInScreenWidget> {
                                                   'charbel');
                                               return {
                                               provider.getUserInfo(
-                                                  0, context),
+                                                  0, context),provider.state=1,
                                               Navigator.pushReplacement(
                                               context,
                                               MaterialPageRoute(
@@ -761,6 +761,7 @@ class _SignInScreenWidgetState extends State<SignInScreenWidget> {
                                             0, 24, 0, 0),
                                         child: FFButtonWidget(
                                           onPressed: () {
+                                            provider.state=1;
                                             Auth()
                                                 .createUserWithEmailAndPassword(
                                                 email: _model
@@ -775,8 +776,8 @@ class _SignInScreenWidgetState extends State<SignInScreenWidget> {
                                                   '${_model.emailAddressController.text}',
                                                   '',
                                                   context);
-                                              Auth().sendEmailVerification();
                                             }).onError((error, stackTrace) {
+                                              provider.state=0;
                                               String errorMessage =
                                               error.toString();
                                               int index =
